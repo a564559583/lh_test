@@ -1,0 +1,73 @@
+{
+  "name": "ng-alain-vscode",
+  "displayName": "ng-alain snippets",
+  "description": "Snippets based on ng-alain",
+  "version": "3.3.0",
+  "icon": "ng-alain.png",
+  "publisher": "cipchk",
+  "license": "MIT",
+  "licenseUrl": "LICENSE",
+  "homepage": "https://github.com/cipchk/ng-alain-vscode/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cipchk/ng-alain-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cipchk/ng-alain-vscode/issues",
+    "email": "cipchk@qq.com"
+  },
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "light"
+  },
+  "main": "./out/src/css-tools/extension",
+  "categories": [
+    "Snippets",
+    "Other",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:html"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "ng-alain-vscode.cache",
+        "title": "Cache All ng-alain CSS class definitions"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets-ts.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets-html.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build:class": "tsc -watch -p ./",
+    "build": "bash ./scripts/build.sh",
+    "release": "bash ./scripts/build.sh -p",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "dependencies": {
+    "less": "^3.0.0",
+    "verror": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/less": "^3.0.0",
+    "@types/node": "^10.12.2",
+    "@types/verror": "^1.10.3",
+    "typescript": "^3.1.6",
+    "vscode": "^1.1.21",
+    "vscode-snippet-generator": "^1.2.0",
+    "vsce": "^1.53.2"
+  }
+}
